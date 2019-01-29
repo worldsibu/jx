@@ -1728,7 +1728,7 @@ func (options *InstallOptions) configureCloudProivderPostInit(client kubernetes.
 			return errors.Wrap(err, "failed to update the helm repo")
 		}
 		err = options.Helm().UpgradeChart("ibm/ibmcloud-block-storage-plugin", "ibmcloud-block-storage-plugin",
-			"default", "", true, -1, false, false, nil, nil, "", "", "")
+			"kube-system", "", true, -1, false, false, nil, nil, "", "", "")
 		if err != nil {
 			return errors.Wrap(err, "failed to install/upgrade the IBM Cloud Block Storage drivers")
 		}
